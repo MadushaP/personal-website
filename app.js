@@ -11,13 +11,18 @@ window.onload = () => {
     const circle = document.querySelector('.circle')
 
     const snake = document.querySelector('.snake')
+    const particle = document.querySelector('.particle')
+    const canvas = document.querySelector('.canvas')
 
-    snake.addEventListener('mouseenter', (e) => {
-        card.style.background = `url('./images/snake-preview.gif')`
+
+    const switchBackground = (url, projectTitleColour = "white", top = "40%") => {
+        card.style.background = `url('${url}')`
         card.style['background-size'] = `1000px 1000px`
-        card.style['background-position'] = `center center`
-        displayPicture.style.opacity = "0"
-        circle.style.opacity = "0"
+        card.style['background-position'] = `center top ` + top
+        displayPicture.style.opacity = 0
+        circle.style.opacity = 0
+        title.style.opacity = 0
+        jobDesc.style.opacity = 0
         title.style.color = "white"
         title.style.transform = "translateZ(150px) translateY(20px)"
         title.style.transition = 'all 0.2s ease'
@@ -25,18 +30,19 @@ window.onload = () => {
         jobDesc.style.color = "white"
         jobDesc.style.transition = 'all 0.2s ease'
 
-        projectTitle.style.color = "white"
+        projectTitle.style.color = projectTitleColour
         projectTitle.style.transition = 'all 0.2s ease'
+    }
 
-
-    })
-
-    snake.addEventListener('mouseleave', (e) => {
+    const restoreBackground = () => {
         card.style.background = null
         card.style['background-color'] = '#ffdee9';
         card.style['background-imag'] = `linear-gradient(0deg, #ffdee9 0%, #b5fffc 100%)`
-        displayPicture.style.opacity = "1"
-        circle.style.opacity = "1"
+        displayPicture.style.opacity = 1
+        circle.style.opacity = 1
+        title.style.opacity = 1
+        projectTitle.opacity = 1
+        jobDesc.style.opacity = 1
         title.style.color = "black"
         title.style.transform = "translateZ(150px)"
         title.style.transition = 'all 0.75s ease'
@@ -46,6 +52,32 @@ window.onload = () => {
 
         projectTitle.style.color = "black"
         projectTitle.style.transition = 'all 0.75s ease'
+    }
+
+
+    snake.addEventListener('mouseenter', (e) => {
+        switchBackground('./images/snake-preview.gif', `white`, '40%')
+    })
+
+    particle.addEventListener('mouseenter', (e) => {
+        switchBackground('./images/particle.gif', `white`, '100%')
+    })
+
+
+    canvas.addEventListener('mouseenter', (e) => {
+        switchBackground('./images/canvas.gif', 'black', '90%')
+    })
+
+    canvas.addEventListener('mouseleave', (e) => {
+        restoreBackground()
+    })
+
+    particle.addEventListener('mouseleave', (e) => {
+        restoreBackground()
+    })
+
+    snake.addEventListener('mouseleave', (e) => {
+        restoreBackground()
     })
 
     container.addEventListener('mousemove', (e) => {
@@ -57,6 +89,7 @@ window.onload = () => {
 
     container.addEventListener('mouseenter', (e) => {
         card.style.transition = 'none'
+
         title.style.transform = 'translateZ(150px)'
         jobDesc.style.transform = 'translateZ(120px)'
 
