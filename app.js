@@ -13,10 +13,18 @@ window.onload = () => {
     const snake = document.querySelector('.snake')
     const particle = document.querySelector('.particle')
     const canvas = document.querySelector('.canvas')
+    var snakeImage = new Image();
+    snakeImage.src = "./images/snake-preview.gif"
 
+    var particleImage = new Image();
+    particleImage.src = "./images/particle.gif"
 
-    const switchBackground = (url, projectTitleColour = "white", top = "40%") => {
-        card.style.background = `url('${url}')`
+    var canvasImage = new Image();
+    canvasImage.src = "./images/canvas.gif"
+
+    const switchBackground = (image, projectTitleColour = "white", top = "40%") => {
+        card.style.background = `url('${image.src}')`
+
         card.style['background-size'] = `1000px 1000px`
         card.style['background-position'] = `center top ` + top
         displayPicture.style.opacity = 0
@@ -56,16 +64,16 @@ window.onload = () => {
 
 
     snake.addEventListener('mouseenter', (e) => {
-        switchBackground('./images/snake-preview.gif', `white`, '40%')
+        switchBackground(snakeImage, `white`, '40%')
     })
 
     particle.addEventListener('mouseenter', (e) => {
-        switchBackground('./images/particle.gif', `white`, '100%')
+        switchBackground(particleImage, `white`, '100%')
     })
 
 
     canvas.addEventListener('mouseenter', (e) => {
-        switchBackground('./images/canvas.gif', 'black', '90%')
+        switchBackground(canvasImage, 'black', '90%')
     })
 
     canvas.addEventListener('mouseleave', (e) => {
