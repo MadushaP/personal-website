@@ -17,10 +17,18 @@ window.onload = () => {
     snakeImage.src = "./images/snake-preview.gif"
 
     var particleImage = new Image();
-    particleImage.src = "./images/particle.gif"
+    particleImage.src = "./images/particle2.gif"
 
     var canvasImage = new Image();
     canvasImage.src = "./images/canvas.gif"
+
+    title.style.transform = 'translateZ(150px)'
+    jobDesc.style.transform = 'translateZ(120px)'
+    displayPicture.style.transform = 'translateZ(100px)'
+    links.style.transform = 'translateZ(175px)'
+    projectTitle.style.transform = 'translateZ(155px)'
+    contact.style.transform = 'translateZ(150px)'
+
 
     const switchBackground = (image, projectTitleColour = "white", top = "40%") => {
         card.style.background = `url('${image.src}')`
