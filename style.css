@@ -11,11 +11,15 @@ body {
   align-items: center;
   justify-content: center;
   perspective: 1500px;
+  -webkit-perspective: 1500px;
+  -moz-perspective: 1500px;
+  -ms-perspective: 1500px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   background-color: #0093e9;
   background-image: linear-gradient(160deg, #0093e9 0%, #80d0c7 100%);
+  transform-style: preserve-3d;
 }
 
 .container {
@@ -24,6 +28,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  transform-style: preserve-3d;
 }
 
 .card {
@@ -37,7 +42,8 @@ body {
   background-color: rgb(255, 255, 255);
   background-color: #ffdee9;
   background-image: linear-gradient(0deg, #ffdee9 0%, #b5fffc 100%);
-  background-color: #8EC5FC;
+  background-color: #8ec5fc;
+  transform-style: preserve-3d;
 }
 
 .display-picture {
@@ -47,6 +53,7 @@ body {
   align-items: center;
   z-index: 2;
   transition: all 0.75s ease-out;
+  transform-style: preserve-3d;
 }
 
 .display-picture img {
@@ -55,6 +62,7 @@ body {
   border-radius: 50%;
   transition: all 0.75s ease-out;
   box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2), 0 0px 50px rgba(0, 0, 0, 0.2);
+  transform-style: preserve-3d;
 }
 
 .circle {
@@ -63,20 +71,23 @@ body {
   background-color: #b3cdd1;
   box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2), 0 0px 50px rgba(0, 0, 0, 0.2);
   position: absolute;
-  z-index: -10;
+  z-index: -1;
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: linear-gradient(62deg, #d8d8d8 0%, #ffffff 100%);;
+  background-image: linear-gradient(62deg, #d8d8d8 0%, #ffffff 100%);
+  transform-style: preserve-3d;
 }
 
 .info {
   text-align: center;
+  transform-style: preserve-3d;
 }
 .info h1 {
   font-size: 2rem;
   transition: all 0.5s ease-out;
+  transform-style: preserve-3d;
 }
 
 .info h3 {
@@ -85,6 +96,7 @@ body {
   color: #585858;
   font-weight: lighter;
   transition: all 0.75s ease-out;
+  transform-style: preserve-3d;
 }
 
 .info h4 {
@@ -93,6 +105,7 @@ body {
   color: #585858;
   font-weight: bold;
   transition: all 0.75s ease-out;
+  transform-style: preserve-3d;
 }
 
 .links {
@@ -102,6 +115,7 @@ body {
   height: 9vh;
   justify-content: center;
   align-items: center;
+  transform-style: preserve-3d;
 }
 
 .links button {
@@ -115,13 +129,15 @@ body {
   height: 5vh;
   margin: 2vh;
   min-height: 50px;
-  background-color: #1C2331;
+  background-color: #1c2331;
+  transform-style: preserve-3d;
 }
 
 button:hover {
-  color: #1C2331;
+  color: #1c2331;
   background: white;
   transition: all 0.35s ease-out;
+  transform-style: preserve-3d;
 }
 
 .contact {
@@ -131,20 +147,108 @@ button:hover {
   justify-content: center;
   transition: all 0.75s ease-out;
   padding-left: 2vh;
+  transform-style: preserve-3d;
 }
 
 .contact a {
   transition: all 0.35s ease-out;
   align-self: center;
   justify-content: center;
-  width:8vh
+  width: 70px;
 }
 
 .contact img {
   height: 55px;
+  transform-style: preserve-3d;
 }
 
 .contact img:hover {
   filter: brightness(0.5);
   cursor: pointer;
+  transform-style: preserve-3d;
+}
+
+@media screen and (max-device-width: 480px) {
+  html,
+  body {
+    overflow-x: hidden;
+  }
+  body {
+    position: relative;
+  }
+  .card {
+    min-height: 60vh;
+    max-height: 340px;
+    width: 42vh;
+    border-radius: 30px;
+    padding: 0rem 5rem;
+    box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2), 0 0px 50px rgba(0, 0, 0, 0.2);
+    transform-style: preserve-3d;
+    background-color: rgb(255, 255, 255);
+    background-color: #ffdee9;
+    background-image: linear-gradient(0deg, #ffdee9 0%, #b5fffc 100%);
+    background-color: #8ec5fc;
+    position: absolute;
+    top: 10%;
+  }
+
+  .display-picture {
+    min-height: 21vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    transition: all 0.75s ease-out;
+  }
+
+  .links button {
+    padding: 0.5rem 2rem;
+    background: none;
+    border: none;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 30px;
+    cursor: pointer;
+    color: white;
+    height: 5vh;
+    margin: 2vh;
+    min-height: 50px;
+    background-color: #1c2331;
+    font-size: 25px;
+  }
+
+  .contact {
+    height: 18vh;
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    transition: all 0.75s ease-out;
+    padding-left: 2vh;
+  }
+  .contact img {
+    height: 120px;
+  }
+
+  .info h1 {
+    font-size: 3rem;
+    transition: all 0.5s ease-out;
+  }
+
+  .info h3 {
+    font-size: 2rem;
+    padding: 2rem 0rem;
+    color: #585858;
+    font-weight: lighter;
+    transition: all 0.75s ease-out;
+  }
+  .info h4 {
+    font-size: 2.2rem;
+    padding: 2rem 0rem;
+    color: #585858;
+    font-weight: bold;
+    transition: all 0.75s ease-out;
+  }
+
+  #linkedIn {
+    height: 110px !important;
+  }
 }

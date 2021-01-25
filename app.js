@@ -28,7 +28,7 @@ window.onload = () => {
     links.style.transform = 'translateZ(175px)'
     projectTitle.style.transform = 'translateZ(155px)'
     contact.style.transform = 'translateZ(150px)'
-
+    circle.style.transform = 'translateZ(1px)'
 
     const switchBackground = (image, projectTitleColour = "white", top = "40%") => {
         card.style.background = `url('${image.src}')`
