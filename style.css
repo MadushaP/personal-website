@@ -133,6 +133,10 @@ body {
   transform-style: preserve-3d;
 }
 
+button:focus {
+  outline: none;
+}
+
 button:hover {
   color: #1c2331;
   background: white;
