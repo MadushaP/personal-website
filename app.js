@@ -1,5 +1,14 @@
 
 window.onload = () => {
+    let isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+    if (isMobile) {
+        document.querySelector('#mobile-warn').innerHTML = `Projects best experienced on desktop`
+        document.ontouchmove = function (e) {
+            e.preventDefault();
+        }
+    }
+
     const card = document.querySelector('.card')
     const container = document.querySelector('.container')
     const title = document.querySelector('.title')
@@ -13,15 +22,16 @@ window.onload = () => {
     const snake = document.querySelector('.snake')
     const particle = document.querySelector('.particle')
     const canvas = document.querySelector('.canvas')
-    var snakeImage = new Image();
-    snakeImage.src = "./images/snake-preview.gif"
+    if (!isMobile) {
+        var snakeImage = new Image();
+        snakeImage.src = "./images/snake-preview.gif"
 
-    var particleImage = new Image();
-    particleImage.src = "./images/particle2.gif"
+        var particleImage = new Image();
+        particleImage.src = "./images/particle2.gif"
 
-    var canvasImage = new Image();
-    canvasImage.src = "./images/canvas.gif"
-
+        var canvasImage = new Image();
+        canvasImage.src = "./images/canvas.gif"
+    }
     title.style.transform = 'translateZ(150px)'
     jobDesc.style.transform = 'translateZ(120px)'
     displayPicture.style.transform = 'translateZ(100px)'
@@ -97,6 +107,9 @@ window.onload = () => {
     })
 
     container.addEventListener('mousemove', (e) => {
+        if (isMobile)
+            return
+
         let x = (window.innerWidth / 2 - e.pageX) / 25
         let y = (window.innerHeight / 2 - e.pageY) / 25
 
@@ -104,6 +117,8 @@ window.onload = () => {
     })
 
     container.addEventListener('mouseenter', (e) => {
+        if (isMobile)
+            return
         card.style.transition = 'none'
 
         title.style.transform = 'translateZ(150px)'
@@ -116,6 +131,9 @@ window.onload = () => {
     })
 
     container.addEventListener('mouseleave', (e) => {
+        if (isMobile)
+            return
+
         card.style.transition = 'all 0.5s ease'
         card.style.transform = `rotateY(0deg) rotateX(0deg)`
         displayPicture.style.transform = 'translateZ(0px) rotateZ(0deg)'

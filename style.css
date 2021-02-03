@@ -20,6 +20,8 @@ body {
   background-color: #0093e9;
   background-image: linear-gradient(160deg, #0093e9 0%, #80d0c7 100%);
   transform-style: preserve-3d;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 .container {
@@ -158,7 +160,6 @@ button:hover {
   transition: all 0.35s ease-out;
   align-self: center;
   justify-content: center;
-  width: 70px;
 }
 
 .contact img {
@@ -176,12 +177,13 @@ button:hover {
   html,
   body {
     overflow-x: hidden;
+    overflow-y: hidden;
   }
   body {
     position: relative;
   }
   .card {
-    min-height: 60vh;
+    min-height: 76vh;
     max-height: 340px;
     width: 42vh;
     border-radius: 30px;
@@ -193,7 +195,7 @@ button:hover {
     background-image: linear-gradient(0deg, #ffdee9 0%, #b5fffc 100%);
     background-color: #8ec5fc;
     position: absolute;
-    top: 10%;
+    top: 2%;
   }
 
   .display-picture {
@@ -203,6 +205,16 @@ button:hover {
     align-items: center;
     z-index: 2;
     transition: all 0.75s ease-out;
+  }
+
+  .display-picture .circle img {
+    height: 14vh;
+    width: 14vh;
+  }
+
+  .links {
+    margin-top: 10vh;
+    height: 5vh;
   }
 
   .links button {
@@ -215,44 +227,56 @@ button:hover {
     color: white;
     height: 5vh;
     margin: 2vh;
-    min-height: 50px;
     background-color: #1c2331;
-    font-size: 25px;
+    font-size: 30px;
+    margin: 17px;
   }
 
   .contact {
-    height: 18vh;
+    margin-top: 5vh;
+    height: 20vh;
     display: flex;
     align-self: center;
     justify-content: center;
     transition: all 0.75s ease-out;
     padding-left: 2vh;
   }
+
   .contact img {
     height: 120px;
   }
 
   .info h1 {
-    font-size: 3rem;
+    font-size: 4.5rem;
     transition: all 0.5s ease-out;
   }
 
   .info h3 {
-    font-size: 2rem;
+    font-size: 3rem;
     padding: 2rem 0rem;
     color: #585858;
     font-weight: lighter;
     transition: all 0.75s ease-out;
   }
   .info h4 {
-    font-size: 2.2rem;
+    font-size: 3rem;
     padding: 2rem 0rem;
-    color: #585858;
+    color: #000000;
     font-weight: bold;
     transition: all 0.75s ease-out;
   }
 
   #linkedIn {
     height: 110px !important;
+  }
+
+  #mobile-warn {
+    position: absolute;
+    left: 50%;
+    top: 35%;
+    transform: translate(-50%, -50%);
+    width: 150%;
+    color: red;
+    font-size: 40px;
   }
 }
