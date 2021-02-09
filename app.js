@@ -45,6 +45,7 @@ window.onload = () => {
 
         card.style['background-size'] = `1000px 1000px`
         card.style['background-position'] = `center top ` + top
+        card.style['box-shadow'] =  `0 20px 20px rgba(0, 0, 0, 0.2), 0 0px 50px rgba(0, 0, 0, 0.2),, inset 0 0 0px #bf156a`;
         displayPicture.style.opacity = 0
         circle.style.opacity = 0
         title.style.opacity = 0
@@ -64,19 +65,20 @@ window.onload = () => {
         card.style.background = null
         card.style['background-color'] = '#ffdee9';
         card.style['background-imag'] = `linear-gradient(0deg, #ffdee9 0%, #b5fffc 100%)`
+        card.style['box-shadow'] =  `0 20px 20px rgba(0, 0, 0, 0.2), 0 0px 50px rgba(0, 0, 0, 0.2), inset 0 0 5px #ffffff`;
         displayPicture.style.opacity = 1
         circle.style.opacity = 1
         title.style.opacity = 1
         projectTitle.opacity = 1
         jobDesc.style.opacity = 1
-        title.style.color = "black"
+        title.style.color = "white"
         title.style.transform = "translateZ(150px)"
         title.style.transition = 'all 0.75s ease'
 
-        jobDesc.style.color = "black"
+        jobDesc.style.color = "white"
         jobDesc.style.transition = 'all 0.75s ease'
 
-        projectTitle.style.color = "black"
+        projectTitle.style.color = "white"
         projectTitle.style.transition = 'all 0.75s ease'
     }
 
@@ -91,7 +93,7 @@ window.onload = () => {
 
 
     canvas.addEventListener('mouseenter', (e) => {
-        switchBackground(canvasImage, 'black', '90%')
+        switchBackground(canvasImage, 'white', '90%')
     })
 
     canvas.addEventListener('mouseleave', (e) => {
