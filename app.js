@@ -138,12 +138,13 @@ window.onload = () => {
 
         card.style.transition = 'all 0.5s ease'
         card.style.transform = `rotateY(0deg) rotateX(0deg)`
-        displayPicture.style.transform = 'translateZ(0px) rotateZ(0deg)'
+        displayPicture.style.transform = 'translateZ(2px) rotateZ(0deg)'
         links.style.transform = 'translateZ(0px)'
         jobDesc.style.transform = 'translateZ(0px)'
         title.style.transform = 'translateZ(0px)'
         projectTitle.style.transform = 'translateZ(0px)'
         contact.style.transform = 'translateZ(0px)'
     })
+
 
 }
