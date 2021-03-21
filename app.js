@@ -22,6 +22,8 @@ window.onload = () => {
     const snake = document.querySelector('.snake')
     const particle = document.querySelector('.particle')
     const canvas = document.querySelector('.canvas')
+    const instagram = document.querySelector('.instagram')
+
     if (!isMobile) {
         var snakeImage = new Image();
         snakeImage.src = "./images/snake-preview.gif"
@@ -31,13 +33,17 @@ window.onload = () => {
 
         var canvasImage = new Image();
         canvasImage.src = "./images/canvas.gif"
+
+        var instagramImage = new Image();
+        instagramImage.src = "./images/instagram.gif"
     }
+    
     title.style.transform = 'translateZ(150px)'
     jobDesc.style.transform = 'translateZ(120px)'
     displayPicture.style.transform = 'translateZ(100px)'
     links.style.transform = 'translateZ(175px)'
     projectTitle.style.transform = 'translateZ(155px)'
-    contact.style.transform = 'translateZ(150px)'
+    contact.style.transform = 'translateZ(5px)'
     circle.style.transform = 'translateZ(1px)'
 
     const switchBackground = (image, projectTitleColour = "white", top = "40%") => {
@@ -45,7 +51,7 @@ window.onload = () => {
 
         card.style['background-size'] = `1000px 1000px`
         card.style['background-position'] = `center top ` + top
-        card.style['box-shadow'] =  `0 20px 20px rgba(0, 0, 0, 0.2), 0 0px 50px rgba(0, 0, 0, 0.2),, inset 0 0 0px #bf156a`;
+        card.style['box-shadow'] = `0 20px 20px rgba(0, 0, 0, 0.2), 0 0px 50px rgba(0, 0, 0, 0.2),, inset 0 0 0px #bf156a`;
         displayPicture.style.opacity = 0
         circle.style.opacity = 0
         title.style.opacity = 0
@@ -59,13 +65,14 @@ window.onload = () => {
 
         projectTitle.style.color = projectTitleColour
         projectTitle.style.transition = 'all 0.2s ease'
+        projectTitle.style.opacity = 0
     }
 
     const restoreBackground = () => {
         card.style.background = null
         card.style['background-color'] = '#ffdee9';
         card.style['background-imag'] = `linear-gradient(0deg, #ffdee9 0%, #b5fffc 100%)`
-        card.style['box-shadow'] =  `0 20px 20px rgba(0, 0, 0, 0.2), 0 0px 50px rgba(0, 0, 0, 0.2), inset 0 0 5px #ffffff`;
+        card.style['box-shadow'] = `0 20px 20px rgba(0, 0, 0, 0.2), 0 0px 50px rgba(0, 0, 0, 0.2), inset 0 0 5px #ffffff`;
         displayPicture.style.opacity = 1
         circle.style.opacity = 1
         title.style.opacity = 1
@@ -80,9 +87,11 @@ window.onload = () => {
 
         projectTitle.style.color = "white"
         projectTitle.style.transition = 'all 0.75s ease'
+        projectTitle.style.opacity = 1
+
     }
 
-
+    //probs should use delegation lol   
     snake.addEventListener('mouseenter', (e) => {
         switchBackground(snakeImage, `white`, '40%')
     })
@@ -97,6 +106,14 @@ window.onload = () => {
     })
 
     canvas.addEventListener('mouseleave', (e) => {
+        restoreBackground()
+    })
+
+    instagram.addEventListener('mouseenter', (e) => {
+        switchBackground(instagramImage, 'white', '30%')
+    })
+
+    instagram.addEventListener('mouseleave', (e) => {
         restoreBackground()
     })
 
@@ -129,7 +146,7 @@ window.onload = () => {
         displayPicture.style.transform = 'translateZ(100px)'
         links.style.transform = 'translateZ(175px)'
         projectTitle.style.transform = 'translateZ(155px)'
-        contact.style.transform = 'translateZ(150px)'
+        contact.style.transform = 'translateZ(120px)'
     })
 
     container.addEventListener('mouseleave', (e) => {
